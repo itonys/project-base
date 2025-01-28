@@ -30,10 +30,10 @@ export function Sidebar({ className, isOpen, onClose }: ISidebarProps) {
 
   const content = (
     <div className={cn('flex h-full flex-col gap-4', className)}>
-      <div className='px-4 py-6'>
-        <Link href='/' className='flex items-center space-x-2'>
+      <div className='px-4 mt-[64px]'>
+        {/* <Link href='/' className='flex items-center space-x-2'>
           <span className='text-xl font-bold'>Your App</span>
-        </Link>
+        </Link> */}
       </div>
       <nav className='flex-1 space-y-1 px-2'>
         {navigation.map(item => {

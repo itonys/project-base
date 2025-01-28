@@ -12,8 +12,13 @@ interface IHeaderProps extends IBaseProps {
 
 export function Header({ className, onMenuClick }: IHeaderProps) {
   return (
-    <header className={cn('w-full border-b bg-background', className)}>
-      <div className='container flex h-16 items-center justify-between px-4'>
+    <header
+      className={cn(
+        'w-full border-b bg-background fixed top-0 z-50',
+        className
+      )}
+    >
+      <div className='flex h-16 items-center justify-between pl-4 pr-10'>
         <div className='flex items-center gap-4'>
           <Button
             variant='ghost'
