@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import { IBaseProps } from '@/types';
-import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
+import { IBaseProps } from '@/types'
+import { Button } from '@/components/ui/button'
+import { Menu } from 'lucide-react'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 interface IHeaderProps extends IBaseProps {
-  onMenuClick?: () => void;
+  onMenuClick?: () => void
 }
 
 export function Header({ className, onMenuClick }: IHeaderProps) {
@@ -42,5 +42,5 @@ export function Header({ className, onMenuClick }: IHeaderProps) {
         </nav>
       </div>
     </header>
-  );
+  )
 }

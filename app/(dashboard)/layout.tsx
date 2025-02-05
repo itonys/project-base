@@ -1,15 +1,15 @@
-'use client';
+'use client'
 
-import { Header } from '@/components/layout/header';
-import { Sidebar } from '@/components/layout/sidebar';
-import { useState } from 'react';
+import { Header } from '@/components/layout/header'
+import { Sidebar } from '@/components/layout/sidebar'
+import { useState } from 'react'
 
 export default function DashboardLayout({
   children
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
     <div className='relative flex min-h-screen flex-col h-full w-full overflow-hidden'>
@@ -19,5 +19,5 @@ export default function DashboardLayout({
         <div className='container p-4 md:p-6'>{children}</div>
       </div>
     </div>
-  );
+  )
 }

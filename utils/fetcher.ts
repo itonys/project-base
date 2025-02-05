@@ -1,6 +1,6 @@
-import { IApiResponse } from '@/types';
+import { IApiResponse } from '@/types'
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || ''
 
 export async function fetcher<T>(
   url: string,
@@ -13,23 +13,23 @@ export async function fetcher<T>(
         'Content-Type': 'application/json',
         ...options.headers
       }
-    });
+    })
 
-    const data = await response.json();
+    const data = await response.json()
 
     if (!response.ok) {
-      throw new Error(data.error || 'API call failed');
+      throw new Error(data.error || 'API call failed')
     }
 
     return {
       success: true,
       data: data as T
-    };
+    }
   } catch (error) {
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error occurred'
-    };
+    }
   }
 }
 
@@ -53,4 +53,4 @@ export const http = {
 
   delete: <T>(url: string, options?: RequestInit) =>
     fetcher<T>(url, { ...options, method: 'DELETE' })
-};
+}

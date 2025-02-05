@@ -1,15 +1,15 @@
-'use client';
+'use client'
 
-import { cn } from '@/lib/utils';
-import { IBaseProps } from '@/types';
-import { Sheet, SheetContent } from '@/components/ui/sheet';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Settings } from 'lucide-react';
+import { cn } from '@/lib/utils'
+import { IBaseProps } from '@/types'
+import { Sheet, SheetContent } from '@/components/ui/sheet'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { LayoutDashboard, Settings } from 'lucide-react'
 
 interface ISidebarProps extends IBaseProps {
-  isOpen?: boolean;
-  onClose?: () => void;
+  isOpen?: boolean
+  onClose?: () => void
 }
 
 const navigation = [
@@ -23,10 +23,10 @@ const navigation = [
     href: '/settings',
     icon: Settings
   }
-];
+]
 
 export function Sidebar({ className, isOpen, onClose }: ISidebarProps) {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   const content = (
     <div className={cn('flex h-full flex-col gap-4', className)}>
@@ -37,7 +37,7 @@ export function Sidebar({ className, isOpen, onClose }: ISidebarProps) {
       </div>
       <nav className='flex-1 space-y-1 px-2'>
         {navigation.map(item => {
-          const isActive = pathname === item.href;
+          const isActive = pathname === item.href
           return (
             <Link
               key={item.name}
@@ -50,11 +50,11 @@ export function Sidebar({ className, isOpen, onClose }: ISidebarProps) {
               <item.icon className='h-5 w-5' />
               {item.name}
             </Link>
-          );
+          )
         })}
       </nav>
     </div>
-  );
+  )
 
   return (
     <>
@@ -67,5 +67,5 @@ export function Sidebar({ className, isOpen, onClose }: ISidebarProps) {
         </SheetContent>
       </Sheet>
     </>
-  );
+  )
 }
